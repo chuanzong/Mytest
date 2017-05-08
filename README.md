@@ -18,5 +18,16 @@
 # mobile_html
 >移动端模板
 
-#draggable
+---
+
+# draggable
 >jquery UI 的拖拽
+
+---
+
+# background1
+>particles.min.js 的小球背景
+
+![f12](background1/background1.gif)
+
+---
