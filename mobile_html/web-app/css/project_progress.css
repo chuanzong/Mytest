@@ -1,0 +1,32 @@
+.ui-footer {
+	background-color: #f1f1f1;
+}
+.ui-btn-wrap {
+	padding: 0 15px;
+}
+.textarea-big {
+	position: relative;
+}
+.textarea-big textarea {
+	height: 300px;
+	padding: 15px 15px 40px;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	letter-spacing: 1px;
+	font-size: 12px;
+}
+.textarea-big .count {
+	position: absolute;
+	right: 15px;
+	bottom: 20px;
+	line-height: 1em;
+	font-size: 14px;
+	color: #757575;
+}
+.form-common p.txt {
+	letter-spacing: 2px;
+}
+
+.form-common .form-imgs .img-box:nth-child(n+9) {
+	display: none;
+}

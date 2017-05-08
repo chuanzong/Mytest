@@ -1,0 +1,317 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="ISUX">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+
+    <link rel="stylesheet" type="text/css" href="../frozen/css/frozen.css">
+    <link rel="stylesheet" type="text/css" href="../css_mobile/default.css">
+
+    <title>伟立机器人</title>
+    <link rel="stylesheet" type="text/css" href="../css_mobile/service.css">
+</head>
+
+<body>
+    
+    <footer class="ui-footer ui-footer-stable">
+        <div class="ui-footer-btns white">
+            <button type="button" class="btn-submit-all btn-footer btn-blue">提 交</button>
+        </div>
+    </footer>
+
+    <section class="ui-container">
+        <form action="" class="ui-form form-common2">
+            <div class="u-module-title">报修机器编号</div>
+            <div class="u-module ui-border-tb">
+                <div class="ui-form-item ui-form-item-link get-number">
+                    <label>机器编号:</label>
+                    <input type="text" placeholder="请输入机器编号">
+                </div>
+            </div>
+            <div class="cl">
+                <button class="btn-gray btn-get-infos" type="button">获取联系人相关信息</button>
+            </div>
+
+            <div class="u-module-title">联系人信息</div>
+            <div class="u-module ui-border-tb">
+                <div class="ui-form-item ui-border-b">
+                    <label>客户名称:</label>
+                    <input type="text" placeholder="请输入客户名称">
+                </div>
+                <div class="ui-form-item ui-form-item-textarea ui-border-b">
+                    <label>详细地址:</label>
+                    <textarea placeholder="请输入详细地址"></textarea>
+                </div>
+                <div class="ui-form-item ui-border-b">
+                    <label>联系人:</label>
+                    <input type="text" placeholder="请输入联系人姓名">
+                </div>
+                <div class="ui-form-item">
+                    <label>联系电话:</label>
+                    <input type="text" placeholder="请输入联系电话">
+                </div>
+            </div>
+
+            <div class="u-module-title">报修信息</div>
+            <div class="u-module ui-border-tb">
+                <div class="ui-form-item ui-border-b">
+                    <label>预约时间:</label>
+                    <input type="date" placeholder="">
+                </div>
+                <div class="ui-form-item ui-form-item-link ui-border-b">
+                    <label>故障类型</label>
+                    <select name="" id="">
+                        <option selected disabled>选择类型</option>
+                        <option value="">培训活动</option>
+                        <option value="">教学物资</option>
+                        <option value="">学术创新</option>
+                        <option value="">其他</option>
+                    </select>
+                </div>
+                <div class="ui-form-item ui-form-item-textarea ui-border-b">
+                    <label>故障信息:</label>
+                    <textarea class="countNum" data-length="120" maxlength="120" placeholder="描述故障信息..."></textarea>
+                    <div class="form-unit count">120</div>
+                </div>
+                <div class="ui-form-item ui-form-item-textarea ui-border-b">
+                    <label>异常原因:</label>
+                    <textarea class="countNum" data-length="120" maxlength="120" placeholder="描述异常原因..."></textarea>
+                    <div class="form-unit count">120</div>
+                </div>
+                <div class="ui-form-item ui-form-item-textarea">
+                    <label>备注:</label>
+                    <textarea class="countNum" data-length="120" maxlength="120" placeholder="备注..."></textarea>
+                    <div class="form-unit count">120</div>
+                </div>
+            </div>
+
+            <div class="u-module ui-border-tb">
+                <div class="ui-form-item">
+                    <label>上传图片</label>
+                    <div class="form-imgs-2">
+                        <div class="img-box">
+                            <input type="file">
+                        </div>
+                        <div class="img-box">
+                            <input type="file">
+                        </div>
+                        <div class="img-box">
+                            <input type="file">
+                        </div>
+                        <div class="img-box">
+                            <input type="file">
+                        </div>
+                        <div class="img-box">
+                            <input type="file">
+                        </div>
+                        <div class="img-box">
+                            <input type="file">
+                        </div>
+                    </div>
+                    <div class="form-unit">0/6</div>
+                </div>
+            </div>
+
+			<div class="u-module ui-border-tb">
+                <div class="ui-form-item ">
+                    <label>上传视频</label>
+                    <div class="form-file">
+                        <input type="file" />
+                        <button class="btn-gray" type="button"><img src="../images_mobile/icon-upload.png" alt="">点击重新上传视频</button>
+                    </div>
+
+                </div>
+                <div class="form-video form-imgs-2 ">
+                    <div class="video-box show-video" >
+                        <input type="file">
+                        <img src="../images_mobile/bg-form-img-add.png" alt="">
+                        <video src="../video/v13.mp4" autoplay="" loop="" controls=""></video>
+                    </div>
+                    <!--<div class="show-video">-->
+                        <!--<video src="../video/v13.mp4" autoplay="" loop="" controls=""></video>-->
+                    <!--</div>-->
+                </div>
+            </div>
+
+            <!--<div class="u-module ui-border-tb">-->
+                <!--<div class="ui-form-item">-->
+                    <!--<label>上传视频</label>-->
+                    <!--<div class="form-file">-->
+                        <!--<button class="btn-gray" type="button"><img src="../images_mobile/icon-upload.png" alt="">点击上传视频</button>-->
+                        <!--<input type="file" />-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        </form>
+    </section>
+
+    <div class="ui-actionsheet">  
+        <div class="ui-actionsheet-cnt">
+            <button>张三 15263254845</button>  
+            <button>李四 15263254845</button>  
+            <button>王五 15263254845</button>  
+            <button>赵六 15263254845</button>  
+            <button class="ui-actionsheet-cancel">取消</button> 
+        </div>         
+    </div>
+
+    <script src="../frozen/lib/zeptojs/zepto.min.js"></script>
+    <script src="../frozen/js/frozen.js"></script>
+    <!-- <script src="../frozen/js/touch.min.js"></script> -->
+    <script src="../frozen/js/touch.js"></script>
+    <script>
+        (function() {
+		
+			$(".form-common2 .ui-form-item").click(function(){
+				console.count()
+			})
+            $('.dialog-step .dialog-box .btn-close').click(function() {
+                $('.dialog-step').removeClass('show');
+            });
+
+            $('.step3 .btn-add-thing').click(function() {
+                $('.new-list-cover').addClass('show');
+            });
+            $('.step3 .lists').on('click', '.momeny-list.ui-arrowlink', function() {
+                // 需把当前条目数据传入
+                $('.new-list-cover').addClass('show');
+            });
+            $('.new-list-cover .new-list .top .btn-close').click(function() {
+                $('.new-list-cover').removeClass('show');
+            });
+
+            // 绑定对应元素的字数校验事件
+            var bind_name = 'input';
+            if (navigator.userAgent.indexOf("MSIE") != -1) {
+                bind_name = 'propertychange';
+            }
+            $('.countNum').bind(bind_name, function() {
+                checkWords(this, $(this).attr('data-length'));
+            })
+            $('.countNum').blur(function() {
+                if ($(this).val().length > $(this).attr('data-length')) {
+                    $(this).val($(this).val().substr(0, $(this).attr('data-length')));
+                }
+            });
+
+            $('.form-common2 .ui-form-item .form-file').on('change', 'input[type=file]', function(){
+                $(this).siblings('button').text(getInputFileName(this));
+            });
+
+            $('.form-imgs-2').on('change', '.img-box input[type=file]', function(){
+                var i = 0;
+                var imgs = $(this).parents('.form-imgs-2');
+                imgs.eq(0).find('input[type=file]').each(function(){
+                    if (this.files.length > 0) {
+                        i++;
+                    }
+                })
+                imgs.siblings('.form-unit').text(i + '/' + imgs.find('.img-box').length);
+            })
+          
+
+            $(".btn-submit-all").tap(function() {
+                var dia = $.dialog({
+                    title: '温馨提示',
+                    content: '提交审核后不可修改',
+                    button: ["确认", "取消"]
+                });
+                dia.on("dialog:action", function(e) {
+                    console.log(e.index)
+                });
+                dia.on("dialog:hide", function(e) {
+                    console.log("dialog hide")
+                });
+            })
+            $(".btn-save-all").tap(function() {
+                var dia = $.dialog({
+                    title: '保存成功',
+                    content: '您保存的项目可在 "个人中心" - "我发起的" 中继续编辑。',
+                    button: ["继续编辑", "去看看"]
+                });
+                dia.on("dialog:action", function(e) {
+                    console.log(e.index)
+                });
+                dia.on("dialog:hide", function(e) {
+                    console.log("dialog hide")
+                });
+            })
+
+            $('.btn-get-infos').click(function(){
+                $('.ui-actionsheet').addClass('show');
+            });
+
+            $('.ui-actionsheet .ui-actionsheet-cancel').click(function(){
+                $('.ui-actionsheet').removeClass('show');
+            });
+
+        })();
+
+        function checkWords(obj, n) {
+            n = parseInt(n);
+            var c = 0;
+            if ($(obj).val().length > n) {
+                c = 0;
+            } else {
+                c = n - $(obj).val().length;
+            }
+            $(obj).siblings('.count').text(c);
+        }
+
+
+        function calFormNum(obj, add) {
+            if (typeof add == 'undefined') {
+                add = true;
+            }
+            correctInputNum(obj);
+            var c = parseInt($(obj).val());
+            c += (add ? 1 : -1);
+            if (c < 1) {
+                c = 1;
+            } else if (c > 99) {
+                c = 99;
+            }
+            $(obj).val(c);
+        }
+
+        function correctInputNum(obj) {
+            var v = correctNum($(obj).val());
+            if (v == '') {
+                $(obj).val('1');
+            } else {
+                $(obj).val(v);
+            }
+        }
+
+        function correctNum(num) {
+            return (num + '').replace(/\D/g, '');
+        }
+
+        function getInputFileName (obj) {
+            obj = $(obj)[0];
+            var result = '', objValue = obj.value;  
+            if(objValue == "") return result;  
+            try {  
+                //对于IE判断要上传的文件的名字 
+                var fso = new ActiveXObject("Scripting.FileSystemObject"); 
+                result = fso.getFile(objValue).name;  
+            } catch (e){  
+                try{  
+                    //对于非IE获得要上传文件的名字 
+                    result = obj.files[0].name;
+                }catch (e) {  
+                    result = '';  
+                }  
+            }  
+            return result;  
+        }
+
+    </script>
+</body>
+
+</html>

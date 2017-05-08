@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="ISUX">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+
+    <link rel="stylesheet" type="text/css" href="../frozen/css/frozen.css">
+    <link rel="stylesheet" type="text/css" href="../css/default.css">
+
+    <title>火堆</title>
+    <link rel="stylesheet" type="text/css" href="../css/user_auth.css">
+</head>
+<body>
+
+    <form action="" class="form-common">
+        <section class="ui-container step1">
+            <p class="txt">首次发布项目要先通过身份验证。<br/>若您在梦想盒子已完成实名，<a href="#">马上登陆</a> ，轻松获取身份信息！</p>
+
+            <h4 class="title">身份信息</h4>
+            <input type="text" placeholder="真实姓名">
+            <div class="form-photo-box">
+                <i></i>
+                <input type="text" placeholder="身份证号">
+                <div class="form-imgs" data-index="1" data-max-length="1">
+                    <div class="img-box">
+                        <b class="close"><img src="../images/icon-fork-white.png" alt=""></b>
+                        <input type="file" id="img1">
+                        <input type="hidden">
+                    </div>
+                </div>
+            </div>
+            
+            <h4 class="title">联系方式</h4>
+            <input type="text" placeholder="手机号">
+            <div class="form-qr-code-box">
+                <input type="text" placeholder="验证码">
+                <button type="button" class="ui-btn-lg">发送验证码</button>
+            </div>
+
+            <h4 class="title">绑定银行卡</h4>
+            <div class="form-photo-box">
+                <i></i>
+                <input type="text" placeholder="银行卡卡号">
+                <div class="form-imgs" data-index="1" data-max-length="1">
+                    <div class="img-box">
+                        <b class="close"><img src="../images/icon-fork-white.png" alt=""></b>
+                        <input type="file" id="img1">
+                        <input type="hidden">
+                    </div>
+                </div>
+            </div>
+
+            <h4 class="title">其他</h4>
+            <input type="text" placeholder="学校全称（仅在职教师需要填写）">
+            <textarea placeholder="个人简介"></textarea>
+
+            <button type="submit" class="ui-btn-lg btn-red btn-next">确认提交</button>
+        </section>
+    </form>
+
+    <div class="d-warning show">
+        <div class="txt">
+            <h2>审核中</h2>
+            <p>您的身份已提交并审核中</p>
+        </div>
+    </div>
+
+    <script src="../frozen/lib/zeptojs/zepto.min.js"></script>
+    <script src="../frozen/js/frozen.js"></script>
+    
+    <script>
+        (function() {
+            $('.form-imgs').on('click', '.img-box .close', function(){
+                $(this).parents('.img-box').remove();
+            })
+            $('.form-imgs').on('change', '.img-box:last-child input[type=file]', function(){
+                // 前台本地测试代码模拟返回操作，后台删除
+                addPhotoPreview($(this).parents('.form-imgs'), 'file:///D:/git/crowdfundingmoney/crowdfundingmoney/web-app/images_mobile/demo/demo-jieshao-2.jpg');
+            })
+
+            $('.form-common .form-photo-box > i').click(function(){
+                $(this).parent().find('.form-imgs .img-box:last-child input[type=file]').click();
+            });
+            
+            $('.form-common .form-qr-code-box button').click(function(){
+                var obj = $(this).attr('disabled', true);
+                var count = null, i = 30;
+
+                obj.text(i + '秒后可重发');
+                count = setInterval(function(){
+                    i--;
+                    if (i <= 0) {
+                        obj.removeAttr('disabled').text('重发验证码');
+                        clearInterval(count)
+                    } else {
+                        obj.text(i + '秒后可重发');
+                    }
+                }, 1000)
+            });
+        })();
+
+        function addPhotoPreview (imgs, url) {
+            var max = parseInt(imgs.attr('data-max-length'));
+            if (max < imgs.find('.img-box').length) {
+                imgs.find('.img-box').eq(max - 1).css('background-image', 'url(' + url + ')').find('input[type=hidden]').val(url);
+            } else {
+                imgs.find('.img-box:last-child').css('background-image', 'url(' + url + ')').find('input[type=hidden]').val(url);
+                var index = parseInt(imgs.attr('data-index'));
+                index++;
+                var html = '<div class="img-box"><b class="close"><img src="../images/icon-fork-white.png" alt=""></b><input type="file" id="img' + (index) + '"><input type="hidden"></div>';
+
+                imgs.attr('data-index', index).append(html);
+            }
+            
+        }
+
+    </script>
+</body>
+</html>

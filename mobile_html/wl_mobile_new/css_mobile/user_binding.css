@@ -1,0 +1,297 @@
+
+html {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    max-width: 768px;
+    margin: 0 auto;
+}
+body{
+    font-family: 'microsoft yahei', Arial, Helvetica, sans-serif;
+}
+/*footer*/
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+    width: 100%;
+    background-color: #fafafa;
+    font-size: 0;
+    border-top: 1px solid #cacaca;
+    /*white-space: nowrap;*/
+}
+
+.footer a {
+    display: inline-block;
+    width: 33.33%;
+    padding: 5px 0 6px;
+    color: #aeaeae;
+    font-size: 10px;
+    text-align: center;
+    line-height: 1em;
+}
+
+.footer a:active {
+    background-color: rgba(0, 0, 0, .07);
+}
+
+.footer a.active {
+    color: #06bf04;
+}
+
+.footer a i {
+    width: 25px;
+    height: 25px;
+    display: block;
+    margin: 0 auto 4px;
+    /*background-image: url(../images_mobile/icons-footer.png);*/
+    background-repeat: no-repeat;
+    background-size: auto 200%;
+    background-position: 33% 110%;
+}
+
+.footer a:nth-child(1) i {
+    background-position: -3% 108%;
+}
+
+.footer a:nth-child(2) i {
+    background-position: 33% 108%;
+}
+
+.footer a:nth-child(3) i {
+    background-position: 66% 108%;
+}
+
+.footer a:nth-child(4) i {
+    background-position: 101.5% 108%;
+}
+
+.footer a:nth-child(1).active i {
+    background-position: -3% -5%;
+}
+
+.footer a:nth-child(2).active i {
+    background-position: 33% -5%;
+}
+
+.footer a:nth-child(3).active i {
+    background-position: 66% -5%;
+}
+
+.footer a:nth-child(4).active i {
+    background-position: 101.5% -5%;
+}
+
+
+/*footer modify*/
+.ui-footer {
+    height: 49px;
+    line-height: 48px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    max-width: 768px;
+    background-color: #fff;
+    display: -webkit-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-align: center;
+}
+.ui-btn-group button {
+    margin-right: 15px;
+}
+.ui-footer-links {
+    -webkit-box-flex: 0;
+    display: -webkit-box;
+    height: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-align: center;
+    background-color: #fff;
+    border-top: 1px solid #d3d3d3;
+}
+.ui-footer-links > * {
+    -webkit-box-flex: 1;
+    width: 50px;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 24px;
+    display: block;
+}
+.ui-footer-links .link-home {
+    /*background-image: url(../images_mobile/icon-footer-home.png);*/
+}
+.ui-footer-links .link-home.fix-width {
+    /*background-image: url(../images_mobile/ic-home.png);*/
+}
+
+.ui-footer-links .link-share {
+    /*background-image: url(../images_mobile/icon-footer-share.png);*/
+}
+.ui-footer .ui-footer-btns {
+    -webkit-box-flex: 1;
+    display: -webkit-box;
+    width: 100%;
+    height: 100%;
+    padding: 6px 10px;
+    background-color: #f1f1f1;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-align: center;
+}
+.ui-footer .ui-footer-btns.white {
+    background-color: #fff;
+}
+.ui-footer .ui-footer-btns button {
+    display: block;
+    -webkit-box-flex: 1;
+    margin: 0 3px;
+}
+
+.ui-footer-links > *:not(:last-child) {
+    border-right: 1px solid #d3d3d3;
+}
+.ui-footer .btn-footer {
+    width: 100%;
+    height: 100%;
+}
+.ui-footer .ui-btn-lg {
+    border-radius: 0;
+    margin-right: 0;
+    font-size: 15px;
+}
+.ui-footer .ui-f-txt {
+    margin: 0 15px;
+    font-size: 12px;
+    color: #504b48;
+}
+.ui-footer .ui-f-txt .price {
+    font-size: 18px;
+    color: #f34f39;
+    margin: 0 10px;
+    vertical-align: middle;
+}
+.ui-footer .ui-f-txt .price i {
+    font-size: 12px;
+    position: relative;
+    right: -2px;
+}
+
+.ui-footer.ui-footer-navi > a {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    box-flex: 1;
+    -webkit-box-flex: 1;
+    height: 44px;
+    line-height: 12px;
+    text-align: center;
+    font-size: 12px;
+    /*color: #a89e99;*/
+    color: #525963;
+    /*font-weight: bold;*/
+    font-weight: normal;
+    font-family: 'microsoft yahei', Arial, Helvetica, sans-serif;
+}
+.ui-footer.ui-footer-navi > a.active {
+    /*color: #2451d4;*/
+    color: #357abc;
+}
+.ui-footer.ui-footer-navi > a i {
+    width: 26px;
+    height: 22px;
+    margin: 1px 0 3px;
+    display: inline-block;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-size: auto 44px;
+    background-image: url(../images_mobile/icons-footer-navi.png);
+}
+.ui-footer.ui-footer-navi > a i.i1 {
+    /*background-position: 2px 0px;*/
+    background-position: 1px 0px;
+}
+.ui-footer.ui-footer-navi > a.active i.i1 {
+    /*background-position: 2px -22px;*/
+    background-position: 1px -22px;
+}
+.ui-footer.ui-footer-navi > a i.i2 {
+    /*background-position: -26px 0;*/
+    background-position: -25px 0;
+}
+.ui-footer.ui-footer-navi > a.active i.i2 {
+    /*background-position: -26px -22px;*/
+    background-position: -25px -22px;
+}
+.ui-footer.ui-footer-navi > a i.i3 {
+    /*background-position: -51px 0px;*/
+    background-position: -48px 0px;
+}
+.ui-footer.ui-footer-navi > a.active i.i3 {
+    /*background-position: -51px -22px;*/
+    background-position: -48px -22px;
+}
+
+
+
+
+.user_binding .ui-form{
+    padding: 0 20px;
+    margin-top: 125px;
+    background-color: transparent;
+}
+.user_binding .ui-form-item{
+    background-color: #fff;
+    border-radius:0px;
+}
+.user_binding .ui-border-radius:before{
+    border-radius:0px;
+}
+.user_binding .ui-select select,.user_binding input{
+    color:#457abc;
+}
+.user_binding  .ui-select:after{
+    font-family: "iconfont" !important;
+    content: "\e628";
+    top: 5%;
+    right: 25px;
+    padding: 0;
+    margin: 0;
+    border:0;
+    font-size: 45px;
+    color:#457abc;
+}
+.user_binding .ui-form-item input{
+    position: relative;
+    z-index: 9;
+}
+.user_binding .work-num{
+    margin: 25px 0 50px;
+}
+.user_binding .ui-form-item label{
+    padding-left: 35px;
+}
+.user_binding label{
+    font-size: 16px;
+    color:#457abc;
+}
+.user_binding label.com{
+    background: url(../images_mobile/icon-binding-1.png) no-repeat 0px 13px;
+    background-size:25%;
+}
+.user_binding label.num{
+    background: url(../images_mobile/icon-binding-2.png) no-repeat 0px 13px;
+    background-size:25%;
+}
+
+.user_binding  .ui-btn-lg{
+    border-radius: 0px;
+    background: #457abc;
+
+}
+.user_binding .ui-btn-primary:before{
+    display: none;
+}

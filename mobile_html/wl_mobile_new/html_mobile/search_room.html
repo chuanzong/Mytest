@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="SHUDAO">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+
+    <link type="text/css" rel="stylesheet" href="../css_mobile/search_room.css">
+    <title>房间搜索</title>
+</head>
+<body id="body">
+<header id="head">
+    <a href="#" class="preBtn"></a>
+    <div class="search">
+        <input class="search-input" type="search" name="search" placeholder=" 请输入你想搜索的房间名称">
+    </div>
+    <button class="searchBtn" id="searchBtn">搜索</button>
+    <p class="clear"></p>
+</header>
+<div class="content" id="room_list">
+    <div class="room-list">
+        <p>房间名称：123456</p>
+
+        <p>房间已有8位参与者</p>
+    </div>
+    <div class="room-list">
+        <p>房间名称：123456</p>
+
+        <p>房间已有8位参与者</p>
+    </div>
+    <div class="room-list">
+        <p>房间名称：123456</p>
+
+        <p>房间已有8位参与者</p>
+    </div>
+    <div class="room-list">
+        <p>房间名称：123456</p>
+
+        <p>房间已有8位参与者</p>
+    </div>
+    <div class="room-list">
+        <p>房间名称：123456</p>
+
+        <p>房间已有8位参与者</p>
+    </div>
+    <div class="room-list">
+        <p>房间名称：123456</p>
+
+        <p>房间已有8位参与者</p>
+    </div>
+    <div class="room-list">
+        <p>房间名称：123456</p>
+
+        <p>房间已有8位参与者</p>
+    </div>
+    <div class="room-list">
+        <p>房间名称：123456</p>
+
+        <p>房间已有8位参与者</p>
+    </div>
+    <div class="room-list">
+        <p>房间名称：123456</p>
+
+        <p>房间已有8位参与者</p>
+    </div>
+    <div class="room-list">
+        <p>房间名称：123456</p>
+
+        <p>房间已有8位参与者</p>
+    </div>
+    <div class="room-list">
+        <p>房间名称：123456</p>
+
+        <p>房间已有8位参与者</p>
+    </div>
+    <button id="addAll" class="addAll">加载更多</button>
+</div>
+<div class="prompt-box" id="prompt_box">
+    <div class="prompt-content">
+        <p>您即将进入123456直播房间</p>
+        <button class="cancel" id="cancel">取消进入</button>
+        <button class="enter">进入房间</button>
+    </div>
+</div>
+<script>
+    var btn = document.getElementById("addAll");
+    var div = document.getElementById("room_list");
+    btn.onclick = function () {
+        console.log("click");
+        div.className = "";
+        btn.style.display = "none";
+    };
+
+    var prompt_box = document.getElementById("prompt_box");
+    var searchBtn = document.getElementById("searchBtn");
+    var cancel = document.getElementById("cancel");
+    searchBtn.onclick = function () {
+        prompt_box.style.display = "block";
+    };
+    cancel.onclick = function () {
+        prompt_box.style.display = "none";
+    };
+
+</script>
+</body>
+</html>

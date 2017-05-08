@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="ISUX">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+
+    <link rel="stylesheet" type="text/css" href="../frozen/css/frozen.css">
+    <link rel="stylesheet" type="text/css" href="../css/default.css">
+
+    <title>发布进展</title>
+    <link rel="stylesheet" type="text/css" href="../css/project_progress.css">
+</head>
+<body>
+    <div class="form">
+        <div class="ui-footer">
+            <div class="ui-btn-wrap">
+                <button type="submit" class="ui-btn-lg btn-red">发布</button>
+            </div>
+        </div>
+
+        <div class="ui-container">
+            <div class="form-common">
+                <div class="textarea-big">
+                    <textarea placeholder="分享最新的进展" maxLenght="3"></textarea>
+                    <span class="count"><i>0</i>/<span class="max">300</span></span>
+                </div>
+                <div class="form-imgs" data-index="1" data-max-length="8">
+                    <div class="img-box">
+                        <b class="close"><img src="../images/icon-fork-white.png" alt=""></b>
+                        <input type="file" id="img1">
+                        <input type="hidden">
+                    </div>
+                </div>
+                <p class="txt">最多上传8张照片</p>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="../frozen/lib/zeptojs/zepto.min.js"></script>
+    <script src="../frozen/js/frozen.js"></script>
+    <script>
+        var MAX_WORDS = 300; // 最多可输入的字符长度
+        (function() {
+            $('.form-imgs').on('click', '.img-box .close', function(){
+                $(this).parents('.img-box').remove();
+            })
+            $('.form-imgs').on('change', '.img-box:last-child input[type=file]', function(){
+                // 前台本地测试代码模拟返回操作，后台删除
+                addPhotoPreview($(this).parents('.form-imgs'), 'file:///D:/git/crowdfundingmoney/crowdfundingmoney/web-app/images_mobile/demo/demo-jieshao-2.jpg');
+            })
+
+            $('.textarea-big .count .max').text(MAX_WORDS);
+            $('.textarea-big textarea').keyup(function(e){
+                if ($(this).val().length >= MAX_WORDS) {
+                    $(this).val($(this).val().substr(0, MAX_WORDS));
+                }
+                $('.textarea-big .count i').text($(this).val().length)
+            });
+
+        })();
+
+        function addPhotoPreview (imgs, url) {
+            var max = parseInt(imgs.attr('data-max-length'));
+            if (max < imgs.find('.img-box').length) {
+                imgs.find('.img-box').eq(max - 1).css('background-image', 'url(' + url + ')').find('input[type=hidden]').val(url);
+            } else {
+                imgs.find('.img-box:last-child').css('background-image', 'url(' + url + ')').find('input[type=hidden]').val(url);
+                var index = parseInt(imgs.attr('data-index'));
+                index++;
+                var html = '<div class="img-box"><b class="close"><img src="../images/icon-fork-white.png" alt=""></b><input type="file" id="img' + (index) + '"><input type="hidden"></div>';
+
+                imgs.attr('data-index', index).append(html);
+            }
+        }
+
+    </script>
+</body>
+</html>

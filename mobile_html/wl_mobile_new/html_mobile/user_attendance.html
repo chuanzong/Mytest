@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="ISUX">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+
+    <link rel="stylesheet" type="text/css" href="../frozen/css/frozen.css">
+    <!--<link rel="stylesheet" type="text/css" href="../css_mobile/default.css">-->
+
+    <title>考勤历史</title>
+    <link rel="stylesheet" type="text/css" href="../css_mobile/user_attendance.css">
+</head>
+
+<body class="user_attendance">
+
+    <div class="ui-footer ui-footer-navi ui-border-t">
+        <a href="#" ><i class="i1"></i><div>首页</div></a>
+        <a href="#"><i class="i2"></i><div>服务</div></a>
+        <a href="#" class="active"><i class="i3"></i><div>我的</div></a>
+    </div>
+
+    <section class="ui-container">
+        <form action="" class="ui-form form-common2">
+            <div class="u-module-title">员工考勤记录</div>
+            <div class="ui-form-item ui-border-radius">
+                <!--<div class="ui-form-item ui-border-radius">-->
+                    <label>真实姓名：</label>
+                    <input type="text" placeholder="">
+                    <a href="#" class="ui-icon-close"></a>
+                <!--</div>-->
+            </div>
+
+            <div class="ui-form-item ui-border-radius">
+                <label>工号：</label>
+                <input type="text" placeholder="">
+            </div>
+
+            <div class="ui-form-item ui-border-radius">
+                <label>时间：</label>
+                <input type="month" value="2015-10" class="getmonth">
+            </div>
+        </form>
+
+
+        <div class="data-table-th">
+            <table class="ui-table ui-border tb-th" border="1">
+                <thead>
+                <tr><th>天</th><th>上班</th><th>下班</th></tr>
+                </thead>
+            </table>
+        </div>
+        <div class="data-table">
+
+            <table class="ui-table ui-border" border="1">
+                <tbody>
+                <tr><td class="tb-quan">1号</td><td class="tb-ok">06:00</td><td class="tb-ok">20:00</td></tr>
+                <tr><td class="">2号</td><td class="tb-ok">06:00</td><td class="tb-no">未打卡</td></tr>
+                <tr><td class="">3号</td><td class="tb-ok">06:00</td><td class="tb-no">未打卡</td></tr>
+                <tr><td class="">4号</td><td class="tb-no">未打卡</td><td class="tb-ok">20:00</td></tr>
+                <tr><td class="">5号</td><td class="tb-no">未打卡</td><td class="tb-ok">20:00</td></tr>
+                <tr><td class="tb-quan">6号</td><td class="tb-ok">06:00</td><td class="tb-ok">20:00</td></tr>
+                <tr><td class="tb-quan">7号</td><td class="tb-ok">06:00</td><td class="tb-ok">06:00</td></tr>
+                <tr><td class="tb-quan">8号</td><td class="tb-ok">06:00</td><td class="tb-ok">06:00</td></tr>
+                <tr><td class="tb-quan">9号</td><td class="tb-ok">06:00</td><td class="tb-ok">06:00</td></tr>
+                <tr><td class="tb-quan">10号</td><td class="tb-ok">06:00</td><td class="tb-ok">20:00</td></tr>
+                <tr><td class="tb-quan">1号</td><td class="tb-ok">06:00</td><td class="tb-ok">20:00</td></tr>
+                <tr><td class="">2号</td><td class="tb-ok">06:00</td><td class="tb-no">未打卡</td></tr>
+                <tr><td class="">3号</td><td class="tb-ok">06:00</td><td class="tb-no">未打卡</td></tr>
+                <tr><td class="tb-quan">4号</td><td class="tb-ok">06:00</td><td class="tb-ok">20:00</td></tr>
+                <tr><td class="tb-quan">5号</td><td class="tb-ok">06:00</td><td class="tb-ok">20:00</td></tr>
+                <tr><td class="tb-quan">6号</td><td class="tb-ok">06:00</td><td class="tb-ok">20:00</td></tr>
+                <tr><td class="tb-quan">7号</td><td class="tb-ok">06:00</td><td class="tb-ok">20:00</td></tr>
+                <tr><td class="tb-quan">8号</td><td class="tb-ok">20:00</td><td class="tb-ok">20:00</td></tr>
+                <tr><td class="tb-quan">9号</td><td class="tb-ok">20:00</td><td class="tb-ok">20:00</td></tr>
+
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+
+    <script src="../frozen/lib/zeptojs/zepto.min.js"></script>
+    <script src="../frozen/js/frozen.js"></script>
+    <script>
+        $(function(){
+            $(".ui-icon-close").click(function(){
+                $(this).prev("input").val("")
+                console.log( $(this))
+            })
+            var date = new Date();
+            $("input.getmonth").val(date.getFullYear()+"-"+(date.getMonth()+1))
+        })
+    </script>
+</body>
+
+</html>

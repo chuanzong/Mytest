@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="ISUX">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+
+    <link rel="stylesheet" type="text/css" href="../frozen/css/frozen.css">
+    <link rel="stylesheet" type="text/css" href="../css_mobile/default.css">
+
+    <title>伟立机器人</title>
+    <link rel="stylesheet" type="text/css" href="../css_mobile/service.css">
+</head>
+
+<body>
+    <footer class="ui-footer ui-footer-stable">
+        <div class="ui-footer-btns">
+            <button type="button" class="btn-submit-all btn-footer btn-gray">返 回</button>
+            <button type="button" class="btn-submit-all btn-footer btn-blue">确 定</button>
+        </div>
+    </footer>
+
+    <section class="ui-container">
+        <form action="" class="ui-form form-common2">
+            <div class="u-module-title">报修评价</div>
+            <div class="u-module ui-border-tb">
+                <div class="ui-form-item ui-form-item-show ui-border-b">
+                    <label>满意程度:</label>
+                    <div class="form-stars">
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                    </div>
+                </div>
+                <div class="ui-form-item ui-form-item-show ui-form-item-textarea">
+                    <label>评价意见:</label>
+                    <textarea class="countNum" data-length="120" maxlength="120" placeholder="请输入评价意见"></textarea>
+                    <div class="form-unit count">120</div>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <script src="../frozen/lib/zeptojs/zepto.min.js"></script>
+    <script src="../frozen/js/frozen.js"></script>
+    <script>
+        // 绑定对应元素的字数校验事件
+        var bind_name = 'input';
+        if (navigator.userAgent.indexOf("MSIE") != -1) {
+            bind_name = 'propertychange';
+        }
+        $('.countNum').bind(bind_name, function() {
+            checkWords(this, $(this).attr('data-length'));
+        })
+        $('.countNum').blur(function() {
+            if ($(this).val().length > $(this).attr('data-length')) {
+                $(this).val($(this).val().substr(0, $(this).attr('data-length')));
+            }
+        });
+
+        // 评价功能js
+        $('.form-stars i').click(function(){
+            var ar = $(this).parent().find('i');
+            for (var i = 0; i <= ar.length; i ++) {
+                if (i <= $(this).index()) {
+                    ar.eq(i).addClass('active');
+                } else {
+                    ar.eq(i).removeClass('active');
+                }
+            }
+        });
+
+        function checkWords(obj, n) {
+            n = parseInt(n);
+            var c = 0;
+            if ($(obj).val().length > n) {
+                c = 0;
+            } else {
+                c = n - $(obj).val().length;
+            }
+            $(obj).siblings('.count').text(c);
+        }
+    </script>
+</body>
+
+</html>

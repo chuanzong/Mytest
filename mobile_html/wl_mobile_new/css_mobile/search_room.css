@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: "Microsoft YaHei", sans-serif;
+}
+
+body {
+    max-width: 768px;
+    margin: auto;
+    position: relative;
+}
+
+button, span, input {
+    font-family: "Microsoft YaHei", sans-serif;
+}
+
+.clear {
+    clear: both;
+    width: 0;
+    height: 0;
+    line-height: 0;
+}
+
+header {
+    background-color: #457abc;
+}
+
+.preBtn {
+    height: 22px;
+    width: 22px;
+    background: url("../images_mobile/preIcon.png") center no-repeat;
+    background-size: cover;
+    float: left;
+    margin: 10px 15px;
+    border: none;
+    outline: none;
+}
+
+.searchBtn {
+    float: right;
+    margin: 11px 15px;
+    background: none;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+.search {
+    position: relative;
+    float: left;
+    width: calc(100% - 126px);
+    background-color: #34629e;
+    padding: 5px;
+    margin: 7px 0;
+    border-radius: 5px;
+}
+
+.search-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 22px;
+    font-size: 13px;
+    color: #fff;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+.search:before {
+    content: "";
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    top: 5px;
+    background: url("../images_mobile/search.png") center no-repeat;
+    background-size: cover;
+}
+
+.content {
+    overflow-y: hidden;
+    height: calc(100% - 115px);
+}
+.room-list {
+    margin: 0 15px;
+    padding: 15px 60px;
+    background: url("../images_mobile/room.png") 10px 50% no-repeat;
+    background-size: 30px 30px;
+    border-bottom: solid 1px #d2d2d2;
+}
+
+@media screen and (max-height: 640px) {
+    .room-list {
+        padding: 10px 60px;
+    }
+
+    .content {
+        height: calc(100% - 110px);
+    }
+}
+.room-list p:first-child {
+    color: #666666;
+    font-size: 15px;
+}
+
+.room-list p:last-child {
+    color: #969696;
+    font-size: 12px;
+}
+
+.addAll {
+    position: fixed;
+    bottom: 40px;
+    left: calc(50% - 32px);
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: #4278be;
+    background: none;
+    outline: none;
+    border: none;
+}
+
+.prompt-box {
+    display: none;
+    width: 100%;
+    height: calc(100% - 45px);
+    position: fixed;
+    top: 45px;
+    left: 0;
+    background-color: rgba(51, 51, 51, 0.43);
+}
+
+.prompt-content {
+    width: 250px;
+    height: 180px;
+    position: fixed;
+    top: calc(50% - 90px);
+    left: calc(50% - 125px);
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.prompt-content p {
+    margin-top: 50px;
+    font-size: 15px;
+    color: #525963;
+    text-align: center;
+}
+
+.prompt-content button {
+    width: 100px;
+    margin-top: 30px;
+    margin-left: 15px;
+    padding: 8px 0;
+    font-size: 15px;
+    border: solid 1px #d2d2d2;
+    outline: none;
+    border-radius: 2px;
+}
+
+.cancel {
+    background-color: #f5f5f5;
+    color: #525963;
+}
+
+.enter {
+    background-color: #4278be;
+    color: #fff;
+}

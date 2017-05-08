@@ -1,0 +1,193 @@
+html {
+	min-width: 320px;
+	height: 100%;
+	overflow-x: hidden;
+	font-size: 10px;
+	max-width: 640px;
+	margin: auto;
+	position: relative;
+}
+body {
+	min-height: 100%;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	background-color: #fff;
+}
+img {
+	max-width: 100%;
+}
+
+.no-scroll {
+	overflow: hidden;
+}
+
+.ui-footer {
+	height: 38px;
+}
+.ui-footer ~ .ui-container {
+	border-bottom: 38px solid transparent;
+}
+
+.nav-maker {
+	position: fixed;
+	left: 0;
+	top: auto;
+	bottom: 0;
+	z-index: 1000;
+	height: 38px;
+	line-height: 38px;
+	width: 100%;
+	background-color: #f2f2f2;
+	box-shadow: 0px -1px 0px #d7d7d7;
+	text-align: center;
+}
+.nav-maker .btn-focus {
+	text-align: center;
+	float: left;
+	width: 40px;
+	height: 38px;
+	position: relative;
+}
+.nav-maker .btn-focus img {
+	height: 20px;
+	margin-top: 9px;
+}
+.nav-maker .btn-focus:before {
+	content: '';
+	position: absolute;
+	left: 50%;
+	top: 4px;
+	z-index: 1;
+	margin-left: -3px;
+	width: 0;
+	height: 0;
+	border-left: 3px solid transparent;
+	border-right: 3px solid transparent;
+	border-bottom: 3px solid #787c82;
+}
+.nav-maker .btn-focus.active:before {
+	display: none;
+}
+.nav-maker .btn-focus:after {
+	display: none;
+	content: '';
+	position: absolute;
+	left: 50%;
+	bottom: 4px;
+	z-index: 1;
+	margin-left: -3px;
+	width: 0;
+	height: 0;
+	border-left: 3px solid transparent;
+	border-right: 3px solid transparent;
+	border-top: 3px solid #787c82;
+}
+.nav-maker .btn-focus.active:after {
+	display: block;
+}
+
+.nav-maker ul {
+	display: block;
+	overflow: hidden;
+}
+.nav-maker ul:after {
+	content: '';
+	display: block;
+	height: 0;
+	clear: both;
+}
+.nav-maker ul > li {
+	display: block;
+	height: 100px;
+	float: left;
+	box-shadow: 1px 0px 0px #d7d7d7 inset;
+}
+.nav-maker ul > li > a {
+	display: block;
+	width: auto;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	word-wrap: normal;
+	color: #616161;
+	text-decoration: none;
+}
+.nav-maker ul > li > a:hover {
+	color: #444;
+}
+.nav-maker ul > li.size1 {
+	width: 100%;
+}
+.nav-maker ul > li.size2 {
+	width: 50%;
+}
+.nav-maker ul > li.size3 {
+	width: 33.33%;
+}
+
+.btn-green:not(.disabled):not(:disabled):active, .btn-green {
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0.5,#06bf04),to(#06bf04)) !important;
+	color: #fff !important;
+	outline: none;
+	border: none;
+}
+.btn-green:not(.disabled):not(:disabled):active, .btn-green:not(.disabled):not(:disabled).active {
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0.5,#06af04),to(#06af04)) !important;
+}
+
+.btn-chartreuse:not(.disabled):not(:disabled):active, .btn-chartreuse {
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0.5,#8ada1a),to(#8ada1a)) !important;
+	color: #fff !important;
+	outline: none;
+	border: none;
+}
+.btn-chartreuse:not(.disabled):not(:disabled):active, .btn-chartreuse:not(.disabled):not(:disabled).active {
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0.5,#7aca1a),to(#7aca1a)) !important;
+}
+
+.btn-orange {
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.5, #ee771e), to(#ee771e)) !important;
+	background-color: #ee771e !important;
+	color: #fff !important;
+}
+.btn-orange:active {
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.5, #de671e), to(#de671e)) !important;
+	background-color: #de671e !important;
+	color: #fff !important;
+}
+.btn-orange:before, .btn-orange:after {
+	display: none;
+}
+
+@media screen and (min-width: 768px) {
+	.nav-maker {
+		height: 76px;
+	}
+	.nav-maker .btn-focus {
+		width: 80px;
+		height: 76px;
+	}
+	.nav-maker .btn-focus img {
+		margin-top: 19px;
+		height: 40px;
+	}
+	.nav-maker ul > li > a {
+		height: 100%;
+		font-size: 24px;
+		line-height: 76px;
+	}
+	.nav-maker .btn-focus:before {
+		top: 5px;
+		margin-left: -8px;
+		border-left: 8px solid transparent;
+		border-right: 8px solid transparent;
+		border-bottom: 8px solid #787c82;
+	}
+	.nav-maker .btn-focus:after {
+		bottom: 5px;
+		margin-left: -8px;
+		border-left: 8px solid transparent;
+		border-right: 8px solid transparent;
+		border-top: 8px solid #787c82;
+	}
+}

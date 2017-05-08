@@ -1,0 +1,178 @@
+.service-container{
+    margin-top:10px;
+}
+.ui-list {
+	margin-bottom: 10px;
+}
+
+.ui-list li h4 {
+	font-size: 18px;
+	color: #504b48;
+}
+
+.ui-list li h4 i {
+	display: inline-block;
+	position: relative;
+	width: 11px;
+	height: 11px;
+	text-align: center;
+	line-height: 12px;
+	font-size: 7px;
+	font-weight: bold;
+	text-transform: capitalize;
+	color: #fff;
+	background-color: #fb6e50;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	bottom: 6px;
+	margin-left: 5px;
+}
+
+.ui-list li p {
+	font-size: 15px;
+	color: #474943;
+}
+
+.ui-list-thumb-s {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	width: 20px;
+	height: 20px;
+}
+
+.ui-list-thumb-s > span {
+	background-size: contain;
+	background-position: center;
+	margin-top: 2px;
+}
+
+.fix_both{
+	*zoom:1;
+}
+.fix_both:after{
+	display:block;
+	content:"clear";
+	height:0;
+	clear:both;
+	overflow:hidden;
+	visibility:hidden;
+}
+body{
+	font-family: 'microsoft yahei', Arial, Helvetica, sans-serif;
+}
+
+
+
+
+.user_comment .ui-list{
+    background-color: #f1f1f1;
+}
+.user_comment .ui-list-info{
+    padding-right:110px;
+    /*float: left;*/
+}
+
+.user_comment .ui-list-link > li{
+    padding-right: 15px;
+    background-color:#fff;
+}
+.user_comment .ui-list-link > li:nth-of-type(2n+1){
+    padding-bottom: 0px;
+    border-top: 1px solid #e0e0e0;
+}
+.user_comment .ui-list-link > li:nth-of-type(2n){
+    padding-top: 0px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #e0e0e0;
+}
+/*箭头设置*/
+.user_comment .ui-list-link > li:after{
+    content:"";
+}
+
+/*头像设置*/
+.comment-user .ui-avatar span{
+	width: 50px;
+	height: 50px;
+	border-radius: 200px;
+}
+/*标题设置*/
+.user_comment .comment-title{
+    color:#525963;
+    position:relative;
+    top:-5px;
+    left: 0px;
+    font-size: 15px;
+}
+/*星星设置*/
+.user_comment .form-stars {
+    font-size: 0;
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    -webkit-box-align: center;
+}
+.user_comment .form-stars {
+    /*padding-left: 75px;*/
+}
+.user_comment .form-stars i {
+    display: -webkit-box;
+    width: 17px;
+    height: 16px;
+    margin-right: 3px;
+    background-repeat: no-repeat;
+    background-image: url(../images_mobile/icons-star.png);
+    background-position: 0 0;
+    background-size: 100% auto;
+}
+.user_comment .form-stars i.active {
+    background-position: 0 100%;
+}
+
+/*日期设置*/
+.user_comment .comment-date{
+    position: absolute;
+    top:18px;
+    right:15px;
+    font-size: 12px;
+    color:#525963;
+}
+
+/*评论 内容*/
+.user_comment .comment-content{
+    display: block;
+    width: 100%;
+    color:#525963;
+    font-size: 15px;
+}
+.user_comment .comment-content .ui-whitespace{
+    padding-right: 0px;
+}
+
+/*更多*/
+.comment-more{
+    position: relative;
+    text-align: right;
+    padding-right: 24px;
+    color:#457abc;
+    cursor:pointer;
+}
+.comment-more:after{
+    font-family: "iconfont" !important;
+    font-size: 32px;
+    line-height: 44px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    display: block;
+    color: #457abc;
+    content: "\e600";
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    margin-top: -22px;
+    margin-right: -10px;
+    transition: transform .15s;
+}
+.user_comment .comment-content .active:after{
+	transform:rotate(-90deg);
+}

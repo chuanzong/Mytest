@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="ISUX">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+
+    <link rel="stylesheet" type="text/css" href="../frozen/css/frozen.css">
+    <link rel="stylesheet" type="text/css" href="../css/default.css">
+
+    <title>火堆</title>
+    <link rel="stylesheet" type="text/css" href="../css/project_list.css">
+</head>
+<body>
+
+    <div class="ui-header">
+        <ul class="tab-type-select ui-border-b">
+            <li class="">
+                分类<img src="../images/icon-arrow-down.png" alt="">
+                <ul class="ui-border-b">
+                    <li class="ui-border-b"><a href="#">分类1</a></li>
+                    <li class="ui-border-b"><a href="#">分类2</a></li>
+                    <li><a href="#">分类3</a></li>
+                </ul>
+            </li>
+            <li class="ui-border-b">
+                热门推荐<img src="../images/icon-arrow-down.png" alt="">
+                <ul>
+                    <li class="ui-border-b"><a href="#">推荐1</a></li>
+                    <li class="ui-border-b"><a href="#">推荐2</a></li>
+                    <li><a href="#">推荐3</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!-- <div class="ui-footer ui-footer-stable ui-btn-group ui-border-t">
+        <a href="#"><img src="../images/icon-horn.png" alt="">发起项目</a>
+        <a href="#"><img src="../images/icon-user.png" alt="">个人中心</a>
+    </div> -->
+    
+    <section class="ui-container">
+
+        <ul class="p-list">
+            <li>
+                <a href="#">
+                    <div class="top" style="background-image:url(../images/demo/demo-project-1.jpg)">
+                        <div class="h3-box"><h3>3万留守儿童的渴望</h3></div>
+                        <div class="ui-progress">
+                            <span style="width:50%"></span>
+                        </div>
+                        <div class="status">募集中</div>
+                    </div>
+                    <div class="bottom">
+                        <div class="infos">
+                            <div class="infos-l">共<span class="num">4293</span>人捐助</div>
+                            <div class="infos-r">还差<span class="num">2200</span>元</div>
+                        </div>
+                        <div class="infos">
+                            <div class="infos-l">2015-06-15 17:32</div>
+                        </div>
+                        <div class="infos big">
+                            <div class="infos-l">已筹金额<span class="num">4293</span>元</div>
+                            <div class="infos-r">剩余天数<span class="num">20</span>天</div>
+                        </div>
+                        <div class="ui-btn-group">
+                            <button class="ui-btn-lg">
+                                我要捐赠
+                            </button>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="top" style="background-image:url(../images/demo/demo-project-2.jpg)">
+                        <div class="h3-box"><h3>分享零花钱顶起童年</h3></div>
+                        <div class="ui-progress yellow">
+                            <span style="width:100%"></span>
+                        </div>
+                        <div class="status yellow">已筹满</div>
+                    </div>
+                    <div class="bottom">
+                        <div class="infos">
+                            <div class="infos-l">共<span class="num">4293</span>人捐助</div>
+                            <div class="infos-r">还差<span class="num">2200</span>元</div>
+                        </div>
+                        <div class="infos">
+                            <div class="infos-l">2015-06-15 17:32</div>
+                        </div>
+                        <div class="infos big">
+                            <div class="infos-l">支持<span class="num">100</span>元</div>
+                            <div class="infos-r">捐赠码: ******</div>
+                        </div>
+                        <div class="ui-btn-group">
+                            <button class="ui-btn-lg">
+                                反馈进展
+                            </button>
+                            <button class="ui-btn-lg">
+                                编辑项目
+                            </button>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="top" style="background-image:url(../images/demo/demo-project-2.jpg)">
+                        <div class="h3-box"><h3>分享零花钱顶起童年</h3></div>
+                        <div class="ui-progress yellow">
+                            <span style="width:100%"></span>
+                        </div>
+                        <div class="status yellow">已筹满</div>
+                    </div>
+                    <div class="bottom">
+                        <div class="infos">
+                            <div class="infos-l">共<span class="num">3306</span>人捐助</div>
+                            <div class="infos-r">还差<span class="num">0</span>元</div>
+                        </div>
+                        <p>和“真爱公益”一起，为74所学校共29877名留守儿童筹集善款制作故事盒子。</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </section>
+    
+
+    <script src="../frozen/lib/zeptojs/zepto.min.js"></script>
+    <script src="../frozen/js/frozen.js"></script>
+
+    <script>
+        (function() {
+            $('.tab-type-select > li').click(function(){
+                if ($(this).hasClass('active')) {
+                    $(this).removeClass('active')
+                } else {
+                    $(this).addClass('active').siblings('li').removeClass('active')    
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

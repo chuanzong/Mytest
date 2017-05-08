@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0;
+    font-family: "Microsoft YaHei", sans-serif;
+}
+
+body {
+    max-width: 768px;
+    margin: auto;
+    position: relative;
+}
+
+button, span, input {
+    font-family: "Microsoft YaHei", sans-serif;
+}
+.clear {
+    clear: both;
+    width: 0;
+    height: 0;
+    line-height: 0;
+}
+
+header {
+    background-color: #457abc;
+    text-align: center;
+}
+
+.m {
+    margin-right: 52px;
+}
+.preBtn {
+    height: 22px;
+    width: 22px;
+    background: url("../images_mobile/preIcon.png") center no-repeat;
+    background-size: cover;
+    float: left;
+    margin: 10px 15px;
+    border: none;
+    outline: none;
+}
+
+.page-title {
+    color: #fff;
+    font-size: 17px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    padding: 10px 0;
+}
+
+.top-bg img {
+    width: 100%;
+    height: auto;
+    float: left;
+    margin-top: -2px;
+}
+
+.roomInfo label {
+    display: block;
+    color: #969696;
+    font-size: 15px;
+    font-weight: normal;
+    background-color: #fff;
+    padding: 20px 25px;
+    margin-top: 10px;
+}
+
+.name {
+    border-top: solid 1px #d2d2d2;
+    position: relative;
+}
+
+.name:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 25px;
+    width: calc(100% - 50px);
+    border-bottom: solid 1px #d2d2d2;
+
+}
+
+.roomInfo .pwd {
+    border-bottom: solid 1px #d2d2d2;
+    margin: 0;
+}
+
+.num {
+    border-top: solid 1px #d2d2d2;
+    border-bottom: solid 1px #d2d2d2;
+}
+
+.roomInfo label input {
+    width: calc(100% - 100px);
+    color: #969696;
+    font-size: 15px;
+    font-weight: normal;
+    outline: none;
+    border: none;
+    background: none;
+}
+
+.createBtn {
+    margin: 50px 15px;
+    width: calc(100% - 30px);
+    color: #fff;
+    font-size: 15px;
+    font-weight: normal;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #457abc;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    letter-spacing: 3px;
+}

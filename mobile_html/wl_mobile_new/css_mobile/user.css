@@ -1,0 +1,111 @@
+.ui-list {
+    margin-bottom: 10px;
+}
+.user-top {
+    /*padding: 35px 0;*/
+    padding: 12% 0;
+    width: 100%;
+    /*background: url(../images_mobile/bg-user-account.jpg) no-repeat center;*/
+    /*background-size: cover;*/
+    background-color: #457abc;
+}
+.user-top .avator-box {
+    /*display: block;*/
+    float:left;
+    /*margin: 5px auto 5px;*/
+    margin: 0 0 0 13%;
+    width: 77px;
+    height: 77px;
+    border: 1px solid #fff;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+.user-top .phone-box {
+    vertical-align: middle;
+    /*text-align: center;*/
+    text-align: left;
+    color: #fff;
+    font-size: 16px;
+    float: left;
+    margin-left: 10%;
+    margin-top: 16px;
+}
+.user-top .phone-box a {
+    color: #fff;
+    font-family: 'microsoft yahei', Arial, Helvetica, sans-serif;
+}
+.user-top .phone-box .user-name{
+    display: inline-block;
+    width:100%;
+    /*padding-left: 20px;*/
+}
+.user-top .user-phoneNum {
+    display: inline-block;
+    line-height: 21px;
+    padding-left: 18px;
+    background-image: url("../images_mobile/icon-phone.png");
+    background-repeat: no-repeat;
+    background-size: 13px 20px;
+    background-position: 1px 1px;
+}
+.ui-list li h4 {
+    font-size: 18px;
+    color: #504b48;
+}
+
+.ui-list li h4 i {
+    display: inline-block;
+    position: relative;
+    width: 11px;
+    height: 11px;
+    text-align: center;
+    line-height: 12px;
+    font-size: 7px;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: #fff;
+    background-color: #fb6e50;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    bottom: 6px;
+    margin-left: 5px;
+}
+
+.ui-list li p {
+    font-size: 15px;
+    /*color: #504b48;*/
+    color: #525963;
+}
+
+.ui-list-thumb-s {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width: 20px;
+    height: 20px;
+}
+
+.ui-list-thumb-s > span {
+    background-size: contain;
+    background-position: center;
+    margin-top: 2px;
+}
+
+.fix_both{
+    *zoom:1;
+}
+.fix_both:after{
+    display:block;
+    content:"clear";
+    height:0;
+    clear:both;
+    overflow:hidden;
+    visibility:hidden;
+}
+body{
+    font-family: 'microsoft yahei', Arial, Helvetica, sans-serif;
+}

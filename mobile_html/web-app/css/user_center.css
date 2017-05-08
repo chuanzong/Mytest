@@ -1,0 +1,85 @@
+.user-top.ui-list li {
+	padding-top: 20px;
+	padding-bottom: 5px;
+}
+.user-top.ui-list li h4 {
+	font-size: 18px;
+	color: #504b48;
+	margin-bottom: 3px;
+}
+.user-top.ui-list li h4 i {
+	display: inline-block;
+	position: relative;
+	width: 11px;
+	height: 11px;
+	text-align: center;
+	line-height: 12px;
+	font-size: 7px;
+	font-weight: bold;
+	text-transform: capitalize;
+	color: #fff;
+	background-color: #fb6e50;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	bottom: 6px;
+	margin-left: 5px;
+}
+.user-top.ui-list li p {
+	font-size: 14px;
+	color: #504b48;
+}
+
+.ui-tab-content {
+	margin-top: 15px;
+}
+.ui-tab-nav li, .ui-tab-nav li.current {
+	color: #504b48;
+	border-bottom: 1px solid transparent;
+}
+.ui-tab-nav li.current {
+	background-color: #f1f1f1;
+	border-bottom: 1px solid #e0e0e0;
+}
+.ui-avatar > span, .ui-avatar-lg > span, .ui-avatar-s > span, .ui-avatar-one > span, .ui-avatar-tiled > span {
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+}
+
+
+ul.trend-list > li {
+	background-color: #fff;
+	margin-bottom: 20px;
+	padding: 15px 15px 5px;
+}
+ul.trend-list > li > a {
+	display: block;
+}
+ul.trend-list > li h3 {
+	color: #504b48;
+	font-size: 16px;
+	margin-bottom: 4px;
+}
+ul.trend-list > li p {
+	color: #504b48;
+	font-size: 12px;
+	letter-spacing: 1px;
+	line-height: 1.7em;
+	margin-bottom: 5px;
+}
+ul.trend-list > li .img-list {
+	font-size: 0;
+	margin-top: 15px;
+}
+ul.trend-list > li .img-list > span {
+	display: inline-block;
+	margin-right: 11px;
+	margin-bottom: 10px;
+	width: 64px;
+	height: 45px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+ul.trend-list > li .img-list > span:nth-child(4n+4) {
+	margin-right: 0;
+}

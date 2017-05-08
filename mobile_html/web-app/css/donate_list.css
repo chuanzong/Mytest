@@ -1,0 +1,46 @@
+.ui-list {
+	background-color: transparent;
+}
+.ui-list > li {
+	background-color: #fff;
+	margin: 12px 0 15px;
+	padding: 10px 0 5px 15px;
+}
+.ui-list li h4 a {
+	color: #444;
+	font-size: 13px;
+	display: block;
+	line-height: 1.5em;
+	margin-top: 6px;
+}
+.ui-list li p {
+	font-size: 12px;
+	color: #989898;
+}
+.ui-list li p i {
+	color: #f34f39;
+	letter-spacing: 1px;
+	margin-left: 5px;
+	font-weight: bold;
+}
+.ui-list-info {
+	position: relative;
+}
+.ui-list-info .date {
+	position: absolute;
+	right: 20px;
+	top: 5px;
+	z-index: 1;
+	font-size: 15px;
+	line-height: 1em;
+}
+.ui-list-info .ui-txt-sub {
+	font-size: 12px;
+	line-height: 1.5em;
+	letter-spacing: 1px;
+	margin-top: 10px;
+	margin-left: -60px;
+}
+
+
+

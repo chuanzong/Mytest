@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="ISUX">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+
+    <link rel="stylesheet" type="text/css" href="../frozen/css/frozen.css">
+    <link rel="stylesheet" type="text/css" href="../css/default.css">
+
+    <title>火堆</title>
+    <link rel="stylesheet" type="text/css" href="../css/project_launch.css">
+</head>
+<body>
+
+    <form action="" class="form-common">
+        <section class="ui-container step1">
+            <p class="txt">发布后可使用电脑对项目做精美编辑。<br/>网址：www.huodui.org</p>
+
+            <h4 class="title">项目描述</h4>
+            <input type="text" placeholder="项目标题：如“为乡村学生上一堂梦想课”">
+            <p class="txt">最多输入<i>30</i>个字</p>
+            
+            <div class="form-single-img">
+                <p>上传项目背景图片</p>
+                <div class="img-box">
+                    <input type="file" id="img1">
+                </div>
+            </div>
+
+            <textarea type="text" placeholder="项目简介"></textarea>
+            <p class="txt">至少输入<i>10</i>个字</p>
+            <textarea type="text" placeholder="项目内容"></textarea>
+            <p class="txt">至少输入<i>100</i>个字</p>
+            
+            <div class="form-imgs" data-index="1">
+                <div class="img-box-line">
+                    <div class="img-box">
+                        <b class="close"><img src="../images/icon-fork-white.png" alt=""></b>
+                        <input type="file" id="img1">
+                        <input type="hidden">
+                    </div>
+                    <div class="img-txt">
+                        <textarea type="text" placeholder="图片描述"></textarea>
+                    </div>
+                </div>
+            </div>
+            <p class="txt">最多上传<i>10</i>张照片</p>
+
+            <button type="button" class="ui-btn-lg btn-red btn-next">下一步</button>
+        </section>
+
+        <section class="ui-container step2">
+            <h4 class="title">项目描述</h4>
+            <div class="ui-justify">
+                <ul class="p-tag-list">
+                    <li class="p-tag active">教育</li>
+                    <li class="p-tag">其他</li>
+                </ul>
+                <ul class="p-tag-list">
+                    <li class="p-tag active">物资</li>
+                    <li class="p-tag">旅行</li>
+                    <li class="p-tag">培训</li>
+                    <li class="p-tag">其他</li>
+                </ul>
+            </div>
+            
+            <h4 class="title">项目目标</h4>
+            <div class="form-input-box"><input type="text" placeholder="筹款天数"><i>天</i></div>
+            <p class="txt">筹款范围<i>1~99</i>天</p>
+
+            <h4 class="title">项目清单</h4>
+            <ul class="task-list">
+                <li>
+                    <input type="text" placeholder="筹集内容名称，如“篮球”">
+                    
+                    <div class="hor-list">
+                        <div class="hor-box">
+                            <div class="form-input-box"><input type="text" placeholder="单价"><i>元</i></div>
+                            <div class="txt-center">数量</div>
+                            <div class="form-num-box">
+                                <div class="btn-minus">-</div>
+                                <input type="text" value="1" onkeyup="correctInputNum(this);" onafterpaste="correctInputNum(this);">
+                                <div class="btn-plus">+</div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            
+            <p class="txt">数量范围<i>1~999</i></p>
+
+            <div class="ui-btn-lg btn-add-task">+添加清单条目</div>
+            <p class="txt-total">筹款金额 <span class="price"><i>￥</i>0.00</span></p>
+
+            <button type="submit" class="ui-btn-lg btn-red btn-next">提交</button>
+        </section>
+    </form>
+
+    <script src="../frozen/lib/zeptojs/zepto.min.js"></script>
+    <script src="../frozen/js/frozen.js"></script>
+    
+    <script>
+        (function() {
+            $('.p-tag-list > li').click(function(){
+                $(this).addClass('active').siblings().removeClass('active');
+            });
+
+            $('.form-imgs').on('click', '.img-box .close', function(){
+                var a = $(this).parents('.img-box-line')[0] || $(this).parents('.img-box')[0];
+                $(a).remove();
+            })
+            $('.form-imgs').on('change', '.img-box-line:last-child input[type=file]', function(){
+                // 前台本地测试代码模拟返回操作，后台删除
+                addNewImgPreview('file:///D:/git/crowdfundingmoney/crowdfundingmoney/web-app/images_mobile/demo/demo-jieshao-2.jpg');
+            })
+            
+            $('section.step1 .btn-next').click(function(){
+                $('section.step1').hide();
+                $('section.step2').show();
+            });
+
+            $('.form-common').on('click', '.form-num-box .btn-minus', function(){
+                calFormNum($(this).siblings('input'), false);
+            });
+            $('.form-common').on('click', '.form-num-box .btn-plus', function(){
+                calFormNum($(this).siblings('input'), true);
+            });
+
+            $('.form-common .btn-add-task').click(function(){
+                var html = '<li><input type="text" placeholder="筹集内容名称，如“篮球”"><div class="hor-list"><div class="hor-box"><div class="form-input-box"><input type="text" placeholder="单价"><i>元</i></div><div class="txt-center">数量</div><div class="form-num-box"><div class="btn-minus">-</div><input type="text" value="1" onkeyup="correctInputNum(this);" onafterpaste="correctInputNum(this);"><div class="btn-plus">+</div></div></div></div></li>';
+                
+                $('.form-common ul.task-list').append(html);
+            });
+
+            $('.form-common .form-single-img .img-box input[type=file]').change(function(){
+                var url = 'file:///D:/git/crowdfundingmoney/crowdfundingmoney/web-app/images_mobile/demo/demo-jieshao-2.jpg';
+                $(this).parent().css('background-image', 'url(' + url + ')');
+            });
+        })();
+
+        // input file 的 id 以  img1 img2 img3 …… 以此类推命名
+        function addNewImgPreview (url) {
+            var imgs = $('.form-imgs');
+            imgs.find('.img-box-line:last-child .img-box').css('background-image', 'url(' + url + ')').find('input[type=hidden]').val(url);
+
+            var index = parseInt(imgs.attr('data-index'));
+            index++;
+            var html = '<div class="img-box-line"><div class="img-box"><b class="close"><img src="../images/icon-fork-white.png" alt=""></b><input type="file" id="img' + (index) + '"><input type="hidden"></div><div class="img-txt"><textarea type="text" placeholder="图片描述"></textarea></div></div>';
+
+            imgs.attr('data-index', index).append(html);
+        }
+
+        function calFormNum (obj, add) {
+            if (typeof add == 'undefined') {
+                add = true;
+            }
+
+            correctInputNum(obj);
+            var c = parseInt($(obj).val());    
+            c += (add ? 1 : -1);
+            if (c < 1) {
+                c = 1;
+            } else if (c > 99) {
+                c = 99;
+            }
+            $(obj).val(c);
+        }
+
+        function correctInputNum (obj) {
+            var v = correctNum($(obj).val());
+            if (v == '') {
+                $(obj).val('1');
+            } else {
+                $(obj).val(v);
+            }
+        }
+        function correctNum (num) {
+            return (num + '').replace(/\D/g, '');
+        }
+    </script>
+</body>
+</html>

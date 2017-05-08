@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="ISUX">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+
+    <link rel="stylesheet" type="text/css" href="../frozen/css/frozen.css">
+    <link rel="stylesheet" type="text/css" href="../css/default.css">
+
+    <title>火堆</title>
+    <link rel="stylesheet" type="text/css" href="../css/user_auth.css">
+</head>
+<body>
+    
+    <section class="ui-container">
+        <ul class="step-navi">
+            <li class="active">身份资料</li>
+            <li>绑定银行卡</li>
+            <li>验证手机号</li>
+            <li>认证完成</li>
+        </ul>
+        <form action="" class="form-common">
+            <div class="step step1 show">
+
+                <h4 class="title">身份信息</h4>
+                <input type="text" placeholder="真实姓名">
+                <div class="form-photo-box">
+                    <i data-link="#img1"></i>
+                    <input type="text" placeholder="身份证号">
+                </div>
+
+                <ul class="ui-justify">
+                    <li>
+                        <div class="form-single-img">
+                            <p>示例</p>
+                            <div class="img-box" style="background-image:url(../images/demo/demo-card-1.jpg)"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-single-img">
+                            <p>上传身份证正面照</p>
+                            <div class="img-box">
+                                <input type="file" id="img1">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <input type="text" placeholder="学校全称（仅在职教师需要填写）">
+                <textarea placeholder="个人简介"></textarea>
+
+                <button type="button" class="ui-btn-lg btn-red btn-next" onclick="goStep(2)">下一步</button>
+            </div>
+
+            <div class="step step2">
+                <h4 class="title">银行卡信息</h4>
+                
+                <select name="" id="">
+                    <option value="0" selected disabled>选择开户行</option>
+                    <option value="1">上海支行</option>
+                    <option value="2">浙江支行</option>
+                    <option value="3">江苏支行</option>
+                </select>
+                <input type="text" placeholder="银行卡号（本人）">
+
+                <button type="button" class="ui-btn-lg btn-red btn-next" onclick="goStep(3)">下一步</button>
+            </div>
+
+            <div class="step step3">
+                <h4 class="title">手机号信息</h4>
+                <input type="text" placeholder="手机号">
+                <div class="form-qr-code-box">
+                    <input type="text" placeholder="验证码">
+                    <button type="button" class="ui-btn-lg">发送验证码</button>
+                </div>
+
+                <button type="button" class="ui-btn-lg btn-red btn-next" onclick="goStep(4)">提交</button>
+            </div>
+
+            <div class="step step4">
+                <div class="success-box">
+                    <h4>恭喜你，实名认证资料填写完成！<br/>欢迎您在火堆多多发起善举</h4>
+                    <p>页面会在<i>5</i>秒后自动跳转至发起项目</p>
+                </div>
+
+                <a href="#" class="ui-btn-lg btn-red btn-next" onclick="goStep(4)">快速至发起项目</a>
+            </div>
+        </form>
+    </section>
+
+    <div class="d-warning">
+        <div class="txt">
+            <h2>审核中</h2>
+            <p>您的身份已提交并审核中</p>
+        </div>
+    </div>
+
+    <script src="../frozen/lib/zeptojs/zepto.min.js"></script>
+    <script src="../frozen/js/frozen.js"></script>
+    
+    <script>
+        (function() {
+            $('.form-common .form-single-img .img-box input[type=file]').change(function(){
+                var url = 'file:///D:/git/crowdfundingmoney/crowdfundingmoney/web-app/images_mobile/demo/demo-jieshao-2.jpg';
+                $(this).parent().css('background-image', 'url(' + url + ')');
+            });
+
+            $('.form-common .form-photo-box > i').click(function(){
+                $($(this).attr('data-link')).click();
+            });
+            
+            $('.form-common .form-qr-code-box button').click(function(){
+                var obj = $(this).attr('disabled', true);
+                var count = null, i = 30;
+
+                obj.text(i + '秒后可重发');
+                count = setInterval(function(){
+                    i--;
+                    if (i <= 0) {
+                        obj.removeAttr('disabled').text('重发验证码');
+                        clearInterval(count)
+                    } else {
+                        obj.text(i + '秒后可重发');
+                    }
+                }, 1000)
+            });
+        })();
+
+        function addPhotoPreview (imgs, url) {
+            var max = parseInt(imgs.attr('data-max-length'));
+            if (max < imgs.find('.img-box').length) {
+                imgs.find('.img-box').eq(max - 1).css('background-image', 'url(' + url + ')').find('input[type=hidden]').val(url);
+            } else {
+                imgs.find('.img-box:last-child').css('background-image', 'url(' + url + ')').find('input[type=hidden]').val(url);
+                var index = parseInt(imgs.attr('data-index'));
+                index++;
+                var html = '<div class="img-box"><b class="close"><img src="../images/icon-fork-white.png" alt=""></b><input type="file" id="img' + (index) + '"><input type="hidden"></div>';
+
+                imgs.attr('data-index', index).append(html);
+            }
+        }
+
+        function goStep (n) {
+            $('ul.step-navi > li').eq(n - 1).addClass('active').siblings().removeClass('active');
+            $('.step').eq(n - 1).addClass('show').siblings().removeClass('show');
+        }
+
+        function countLink (url) {
+            var i = 5;
+            var c = null;
+            $('.success-box p i').text(i);
+            c = setInterval(function(){
+                if (i < 1) {
+                    clearInterval(c);
+                    c = null;
+                    location.href = url;
+                } else {
+                    i--;
+                    $('.success-box p i').text(i);
+                }
+            }, 1000);
+        }
+
+    </script>
+</body>
+</html>

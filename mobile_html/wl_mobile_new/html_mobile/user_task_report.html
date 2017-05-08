@@ -1,0 +1,452 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="ISUX">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+
+    <link rel="stylesheet" type="text/css" href="../frozen/css/frozen.css">
+    <link rel="stylesheet" type="text/css" href="../css_mobile/default.css">
+
+    <title>伟立机器人</title>
+    <link rel="stylesheet" type="text/css" href="../css_mobile/user_task.css">
+</head>
+
+<body>
+    <div class="step step1">
+        <form action="" class="ui-form form-common2">
+            <footer class="ui-footer ui-footer-stable">
+                <div class="ui-footer-btns white">
+                    <button type="button" class="btn-submit-all btn-footer btn-gray">返 回</button>
+                    <button type="button" class="btn-submit-all btn-footer btn-blue">提 交</button>
+                </div>
+            </footer>
+
+            <section class="ui-container">
+                <div class="u-module-title">故障信息</div>
+                <div class="u-module ui-border-tb">
+                    <div class="ui-form-item ui-form-item-link ui-border-b">
+                        <label>故障归类</label>
+                        <select name="" id="">
+                            <option selected disabled>选择故障</option>
+                            <option value="">故障原因1</option>
+                            <option value="">故障原因2</option>
+                            <option value="">故障原因3</option>
+                            <option value="">其他</option>
+                        </select>
+                    </div>
+                    <div class="ui-form-item ui-form-item-link" onclick="goStep(2)">
+                        <label class="long">检查内容简述</label>
+                    </div>
+                </div>
+
+                <div class="u-module-title">工作内容</div>
+                <div class="u-module ui-border-tb">
+                    <div class="ui-form-item ui-form-item-link" onclick="goStep(3)">
+                        <label class="long">检查情况及处理结论</label>
+                    </div>
+                </div>
+
+                <div class="u-module-title">费用清单</div>
+                <div class="u-module ui-border-tb">
+                    <div class="ui-form-item ui-border-b">
+                        <label>交通时间</label>
+                        <input type="datetime-local">
+                        <div class="form-unit">开始</div>
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label></label>
+                        <input type="datetime-local">
+                        <div class="form-unit">结束</div>
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label>服务工时</label>
+                        <input type="datetime-local">
+                        <div class="form-unit">开始</div>
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label></label>
+                        <input type="datetime-local">
+                        <div class="form-unit">结束</div>
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label class="long">费用服务（￥）</label>
+                        <input type="text" value="100.00" placeholder="请输入金额">
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label class="long">交通费用（￥）</label>
+                        <input type="text" value="100.00" placeholder="请输入金额">
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label class="long">食宿费用（￥）</label>
+                        <input type="text" value="100.00" placeholder="请输入金额">
+                    </div>
+                    <div class="ui-form-item ui-form-item-link" onclick="goStep(4)">
+                        <label class="long">零件费用（￥）</label>
+                        <input type="text" value="200.00" placeholder="填写零件清单">
+                    </div>
+                </div>
+                <div class="u-module-title">
+                    <div class="form-total">
+                        合计: <em>￥500.00</em>
+                    </div>
+                </div>
+
+                <div class="u-module ui-border-tb">
+                    <div class="ui-form-item ui-form-item-sign">
+                        <label class="long">客户签字确认</label>
+                        <div class="form-sign">
+                            <img src="../images_mobile/img-sign-default.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </form>
+    </div>
+
+    <canvas id="can" width="600" height="500" ></canvas>
+
+    <div class="step step2">
+        <form action="" class="ui-form form-common2">
+            <footer class="ui-footer ui-footer-stable">
+                <div class="ui-footer-btns">
+                    <button type="button" class="btn-submit-all btn-footer btn-gray" onclick="goStep(1)">返 回</button>
+                    <button type="button" class="btn-submit-all btn-footer btn-blue">确 定</button>
+                </div>
+            </footer>
+
+            <section class="ui-container">
+                <div class="u-module-title">故障内容简述</div>
+                <div class="u-module ui-border-tb">
+                    <div class="lists">
+                        <ul class="ui-list ui-list-text ui-list-link ui-border-b">
+                            <li class="ui-border-t">
+                                <p class="ui-nowrap-multi">故障内容故障内容故障内容故障内容故障内容故障内容故障内容故障内容故障内容故障内容故障内容故障内容故障内容容故障内容故障内容故障内容故障内容</p>
+                            </li>
+                            <li class="ui-border-t">
+                                <p class="ui-nowrap-multi">长文字长文字长文字长文字长文字长文字长文字长文字长文字长文字长文字长文字长文字长文字长文字长文字</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="btn-add-thing ui-border-t ui-arrowlink">+添加条目</div>
+                </div>
+
+                <div class="new-list-cover">
+                    <footer class="ui-footer">
+                        <div class="ui-footer-btns">
+                            <button type="button" class="btn-footer btn-gray">删 除</button>
+                            <button type="button" class="btn-footer btn-blue">保 存</button>
+                        </div>
+                    </footer>
+                    <div class="new-list">
+                        <div class="u-module ui-border-b">
+                            <div class="top ui-border-b">
+                                <span class="btn-close"></span>请输入故障内容
+                            </div>
+                            <div class="ui-form-item">
+                                <textarea placeholder="请在此输入..."></textarea>
+                            </div>
+                        </div>
+                        <div class="u-module-title">
+                            <div class="form-total">
+                                合计: <em>￥2500.00</em>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </form>
+    </div>
+
+    <div class="step step3">
+        <form action="" class="ui-form form-common2">
+            <footer class="ui-footer ui-footer-stable">
+                <div class="ui-footer-btns">
+                    <button type="button" class="btn-submit-all btn-footer btn-gray" onclick="goStep(1)">返 回</button>
+                    <button type="button" class="btn-submit-all btn-footer btn-blue">确 定</button>
+                </div>
+            </footer>
+
+            <section class="ui-container">
+                <div class="u-module-title">检查情况及处理结论</div>
+                <div class="u-module ui-border-tb">
+                    <div class="lists">
+                        <ul class="ui-list ui-list-text ui-list-link ui-border-b">
+                            <li class="ui-border-t">
+                                <p class="ui-nowrap-multi">检查情况检查情况检查情况检查情况检查情况检查情况检查情况检查情况检查情况检查情况检查情况检查情况检查情况检查情况检查情况检查情况检查情况检查情况检查情况检查情况检查情况</p>
+                            </li>
+                            <li class="ui-border-t">
+                                <p class="ui-nowrap-multi">长文字长文字长文字长文字长文字长文字长文字长文字长文字长文字长文字长文字长文字长文字长文字长文字</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="btn-add-thing ui-border-t ui-arrowlink">+添加条目</div>
+                </div>
+
+                <div class="new-list-cover">
+                    <footer class="ui-footer">
+                        <div class="ui-footer-btns">
+                            <button type="button" class="btn-footer btn-gray">删 除</button>
+                            <button type="button" class="btn-footer btn-blue">保 存</button>
+                        </div>
+                    </footer>
+                    <div class="new-list">
+                        <div class="u-module ui-border-b">
+                            <div class="top ui-border-b">
+                                <span class="btn-close"></span>请输入检查情况及处理简述
+                            </div>
+                            <div class="ui-form-item">
+                                <textarea placeholder="请在此输入..."></textarea>
+                            </div>
+                        </div>
+                        <div class="u-module-title">
+                            <div class="form-total">
+                                合计: <em>￥2500.00</em>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </form>
+    </div>
+
+    <div class="step step4">
+        <form action="" class="ui-form form-common2">
+            <footer class="ui-footer ui-footer-stable">
+                <div class="ui-footer-btns">
+                    <button type="button" class="btn-submit-all btn-footer btn-gray" onclick="goStep(1)">返 回</button>
+                    <button type="button" class="btn-submit-all btn-footer btn-blue">确 定</button>
+                </div>
+            </footer>
+
+            <section class="ui-container">
+
+                <ul class="ui-row momeny-list-title">
+                    <li class="ui-col ui-col-36"><p class="ui-nowrap">零件名称</p></li>
+                    <li class="ui-col ui-col-32"><p class="ui-nowrap">型号</p></li>
+                    <li class="ui-col ui-col-12"><p class="ui-nowrap">数量</p></li>
+                    <li class="ui-col ui-col-20"><p class="ui-nowrap">单价</p></li>
+                </ul>
+                <div class="u-module ui-border-tb">
+                    <div class="lists">
+                        <ul class="ui-row momeny-list">
+                            <li class="ui-col ui-col-36 ui-border-b"><p class="ui-nowrap">零件名称零件名称</p></li>
+                            <li class="ui-col ui-col-32 ui-border-b"><p class="ui-nowrap">DFJKSALFAJD</p></li>
+                            <li class="ui-col ui-col-12 ui-border-b"><p class="ui-nowrap">999</p></li>
+                            <li class="ui-col ui-col-20 ui-border-b ui-arrowlink"><p class="ui-nowrap">999.99</p></li>
+                        </ul>
+                        <ul class="ui-row momeny-list">
+                            <li class="ui-col ui-col-36 ui-border-b"><p class="ui-nowrap">零件名称</p></li>
+                            <li class="ui-col ui-col-32 ui-border-b"><p class="ui-nowrap">DFJKSALF</p></li>
+                            <li class="ui-col ui-col-12 ui-border-b"><p class="ui-nowrap">99</p></li>
+                            <li class="ui-col ui-col-20 ui-border-b ui-arrowlink"><p class="ui-nowrap">99.99</p></li>
+                        </ul>
+                    </div>
+
+                    <div class="btn-add-thing ui-border-t ui-arrowlink">+添加条目</div>
+                </div>
+                <div class="u-module-title">
+                    <div class="form-total">
+                        合计: <em>￥2500.00</em>
+                    </div>
+                </div>
+
+                <div class="new-list-cover">
+                    <footer class="ui-footer">
+                        <div class="ui-footer-btns">
+                            <button type="button" class="btn-footer btn-gray">删 除</button>
+                            <button type="button" class="btn-footer btn-blue">保 存</button>
+                        </div>
+                    </footer>
+                    <div class="new-list">
+                        <div class="u-module ui-border-b">
+                            <div class="top ui-border-b">
+                                <span class="btn-close"></span>请输入清单内容
+                            </div>
+                            <div class="ui-form-item ui-border-b">
+                                <label for="">零件名称</label>
+                                <input type="text" placeholder="输入零件名称">
+                            </div>
+                            <div class="ui-form-item ui-border-b">
+                                <label for="">型号</label>
+                                <input type="text" placeholder="输入零件型号">
+                            </div>
+                            <div class="ui-form-item ui-border-b">
+                                <label for="">数量</label>
+                                <input type="number" placeholder="输入零件数量">
+                            </div>
+                            <div class="ui-form-item">
+                                <label for="">单价(￥)</label>
+                                <input type="number" placeholder="输入零件单价">
+                            </div>
+                        </div>
+                        <div class="u-module-title">
+                            <div class="form-total">
+                                合计: <em>￥2500.00</em>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </form>
+    </div>
+
+    <script src="../frozen/lib/zeptojs/zepto.min.js"></script>
+    <script src="../frozen/js/frozen.js"></script>
+    <script>
+        (function() {
+            $('.dialog-step .dialog-box .btn-close').click(function() {
+                $('.dialog-step').removeClass('show');
+            });
+
+            $('.step3 .btn-add-thing').click(function() {
+                $('.new-list-cover').addClass('show');
+            });
+            $('.step3 .lists').on('click', '.momeny-list.ui-arrowlink', function() {
+                // 需把当前条目数据传入
+                $('.new-list-cover').addClass('show');
+            });
+            $('.new-list-cover .new-list .top .btn-close').click(function() {
+                $('.new-list-cover').removeClass('show');
+            });
+
+            $('.step').on('click', '.btn-add-thing', function(){
+                $(this).parents('.step').eq(0).find('.new-list-cover').addClass('show')
+            })
+          
+
+        })();
+
+        function checkWords(obj, n) {
+            n = parseInt(n);
+            var c = 0;
+            if ($(obj).val().length > n) {
+                c = 0;
+            } else {
+                c = n - $(obj).val().length;
+            }
+            $(obj).siblings('.count').text(c);
+        }
+
+
+        function calFormNum(obj, add) {
+            if (typeof add == 'undefined') {
+                add = true;
+            }
+            correctInputNum(obj);
+            var c = parseInt($(obj).val());
+            c += (add ? 1 : -1);
+            if (c < 1) {
+                c = 1;
+            } else if (c > 99) {
+                c = 99;
+            }
+            $(obj).val(c);
+        }
+
+        function correctInputNum(obj) {
+            var v = correctNum($(obj).val());
+            if (v == '') {
+                $(obj).val('1');
+            } else {
+                $(obj).val(v);
+            }
+        }
+
+        function correctNum(num) {
+            return (num + '').replace(/\D/g, '');
+        }
+
+        function getInputFileName (obj) {
+            obj = $(obj)[0];
+            var result = '', objValue = obj.value;  
+            if(objValue == "") return result;  
+            try {  
+                //对于IE判断要上传的文件的名字 
+                var fso = new ActiveXObject("Scripting.FileSystemObject"); 
+                result = fso.getFile(objValue).name;  
+            } catch (e){  
+                try{  
+                    //对于非IE获得要上传文件的名字 
+                    result = obj.files[0].name;
+                }catch (e) {  
+                    result = '';  
+                }  
+            }  
+            return result;  
+        }
+
+        function goStep (num) {
+            $('.step.step' + num).show().siblings('.step').hide()
+        }
+
+
+        // 签字版
+        $(".form-sign").click(function(){
+            $("#can").toggle()
+        });
+        var canvas = document.getElementById('can'),
+            context= canvas.getContext('2d'),
+            options = {     //定义画笔相关参数
+                lineWidth : 5,      //粗细
+                strokeStyle: '#555' //颜色
+            },
+            events = {
+                touchstart: function(e){ //鼠标按下记住
+                    this.isButtonDown = true;
+                    context.beginPath();
+                    this.canvasx = canvas.getBoundingClientRect().left;
+                    this.canvasy = canvas.getBoundingClientRect().top;
+                    context.moveTo( e.changedTouches[0].clientX-this.canvasx ,e.changedTouches[0].clientY-this.canvasy)
+                },
+                touchmove:function(e){  //移动画图S
+                    var pos = { x:e.changedTouches[0].clientX-this.canvasx, y:e.changedTouches[0].clientY-this.canvasy };
+                    if(this.isButtonDown){
+                        setTimeout(function(){
+                            context.lineTo(pos.x, pos.y);
+                            context.stroke();
+                        },0);
+                    }
+                },
+                touchend:function(e){    //鼠标放开停止画图
+                    this.isButtonDown = false;
+                }
+            };
+            // 签字版大小
+            canvas.width = document.querySelector('body').getBoundingClientRect().width;
+            canvas.height = document.querySelector('body').getBoundingClientRect().height/2;
+            /*把画笔相关参数赋值*/
+            for(var k in options){
+                context[k] = options[k]
+            }
+            /*绑定相关事件*/
+            for(var i in events){
+                canvas.addEventListener(i,events[i]);
+            }
+
+
+            function handler() {
+              event.preventDefault();
+            }
+            window.addEventListener("touchstart", function(e){
+                if(e.target==canvas){
+                    // 绑定事件
+                    document.addEventListener('touchmove', handler, false);
+                }else{        
+                    // 解绑事件
+                    document.removeEventListener('touchmove', handler, false) 
+                }
+            }, false); 
+
+
+
+    </script>
+</body>
+
+</html>

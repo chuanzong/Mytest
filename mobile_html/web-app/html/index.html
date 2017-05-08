@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="ISUX">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+
+    <link rel="stylesheet" type="text/css" href="../frozen/css/frozen.css">
+    <link rel="stylesheet" type="text/css" href="../css/default.css">
+
+    <title>火堆</title>
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+</head>
+<body>
+
+    <div class="ui-footer ui-footer-stable ui-btn-group ui-border-t">
+        <a href="#"><img src="../images/icon-horn.png" alt="">发起项目</a>
+        <a href="#"><img src="../images/icon-user.png" alt="">个人中心</a>
+    </div>
+    
+    <section class="ui-container">
+        <div class="ui-slider">
+            <ul class="ui-slider-content">
+                <li><span style="background-image:url(../images/demo/demo-poster.png)"></span></li>
+                <li><span style="background-image:url(../images/demo/demo-poster.png)"></span></li>      
+                <li><span style="background-image:url(../images/demo/demo-poster.png)"></span></li>
+            </ul>
+        </div>
+
+        <div class="p-title">精选推荐<a href="#" class="btn btn-white">全部</a></div>
+        <ul class="p-list">
+            <li>
+                <a href="#">
+                    <div class="top" style="background-image:url(../images/demo/demo-project-1.jpg)">
+                        <div class="h3-box"><h3>3万留守儿童的渴望</h3></div>
+                        <div class="ui-progress">
+                            <span style="width:50%"></span>
+                        </div>
+                        <div class="status">募集中</div>
+                    </div>
+                    <div class="bottom">
+                        <div class="infos">
+                            <div class="infos-l">共<span class="num">4293</span>人捐助</div>
+                            <div class="infos-r">还差<span class="num">2200</span>元</div>
+                        </div>
+                        <p>和“真爱公益”一起，为74所学校共29877名留守儿童筹集善款制作故事盒子。</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="top" style="background-image:url(../images/demo/demo-project-2.jpg)">
+                        <div class="h3-box"><h3>分享零花钱顶起童年</h3></div>
+                        <div class="ui-progress yellow">
+                            <span style="width:100%"></span>
+                        </div>
+                        <div class="status yellow">已筹满</div>
+                    </div>
+                    <div class="bottom">
+                        <div class="infos">
+                            <div class="infos-l">共<span class="num">3306</span>人捐助</div>
+                            <div class="infos-r">还差<span class="num">0</span>元</div>
+                        </div>
+                        <p>和“真爱公益”一起，为74所学校共29877名留守儿童筹集善款制作故事盒子。</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="top" style="background-image:url(../images/demo/demo-project-2.jpg)">
+                        <div class="h3-box"><h3>分享零花钱顶起童年</h3></div>
+                        <div class="ui-progress yellow">
+                            <span style="width:100%"></span>
+                        </div>
+                        <div class="status yellow">已筹满</div>
+                    </div>
+                    <div class="bottom">
+                        <div class="infos">
+                            <div class="infos-l">共<span class="num">3306</span>人捐助</div>
+                            <div class="infos-r">还差<span class="num">0</span>元</div>
+                        </div>
+                        <p>和“真爱公益”一起，为74所学校共29877名留守儿童筹集善款制作故事盒子。</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </section>
+    
+
+    <script src="../frozen/lib/zeptojs/zepto.min.js"></script>
+    <script src="../frozen/js/frozen.js"></script>
+
+    <script>
+        (function() {
+            var slider = new fz.Scroll('.ui-slider', {
+                role: 'slider',
+                indicator: true,
+                autoplay: true,
+                interval: 3000
+            });
+
+            slider.on('beforeScrollStart', function(from, to) {
+                // console.log(from, to);
+            });
+
+            slider.on('scrollEnd', function(curPage) {
+                // console.log(curPage);
+            });
+        })();
+    </script>
+</body>
+</html>

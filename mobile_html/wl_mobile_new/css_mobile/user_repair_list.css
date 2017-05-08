@@ -1,0 +1,19 @@
+.ui-tab-nav {
+	position: fixed;
+	max-width: 768px;
+	top: 0;
+	margin: 0 auto;
+	z-index: 5;
+}
+.ui-tab-nav li.current {
+    color: #457abc;
+    /*color: #2451d4;*/
+    border-bottom: 3px #457abc solid;
+    /*border-bottom: 3px #2451d4 solid;*/
+}
+.ui-tab-content {
+	padding-top: 12px;
+}
+.ui-tab-nav li {
+	min-width: 50px;
+}

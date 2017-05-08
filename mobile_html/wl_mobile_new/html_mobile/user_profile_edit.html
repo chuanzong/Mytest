@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="ISUX">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+
+    <link rel="stylesheet" type="text/css" href="../frozen/css/frozen.css">
+    <link rel="stylesheet" type="text/css" href="../css_mobile/default.css">
+
+    <title>伟立机器人</title>
+    <link rel="stylesheet" type="text/css" href="../css_mobile/service.css">
+</head>
+
+<body>
+    
+    <footer class="ui-footer ui-footer-stable">
+        <div class="ui-footer-btns">
+            <button type="button" class="btn-submit-all btn-footer btn-blue">保 存</button>
+        </div>
+    </footer>
+
+    <section class="ui-container">
+        <form action="" class="ui-form form-common2">
+            <div class="u-module-title">绑定手机号</div>
+            <div class="u-module ui-border-tb">
+                <div class="ui-form-item">
+                    <input type="text" placeholder="请输入手机号">
+                    <a href="#" class="ui-icon-close"></a>
+                </div>
+            </div>
+            <div class="u-module ui-border-tb">
+                <div class="ui-form-item">
+                    <input type="text" placeholder="输入手机验证码">
+                    <span onclick="getVerificationCode(this, 60);" class="btn-get-code">获取验证码</span>
+                </div>
+            </div>
+
+            <div class="u-module ui-border-tb">
+                <div class="ui-form-item">
+                    <input type="text" placeholder="请输入客户名称">
+                </div>
+            </div>
+
+            <div class="u-module ui-border-tb">
+                <div class="ui-form-item">
+                    <textarea placeholder="请输入详细地址"></textarea>
+                </div>
+            </div>
+
+            <div class="u-module ui-border-tb">
+                <div class="ui-form-item">
+                    <input type="text" placeholder="请输入联系人名字">
+                </div>
+            </div>
+
+            <div class="u-module ui-border-tb">
+                <div class="ui-form-item">
+                    <input type="text" placeholder="请输入联系人手机号">
+                </div>
+            </div>
+
+            <div class="u-module-title">意见反馈</div>
+            <div class="u-module ui-border-tb">
+                <div class="ui-form-item ui-border-b">
+                    <textarea placeholder="请在此输入您的宝贵意见，我们期待与您真诚沟通"></textarea>
+                </div>
+                <div class="ui-form-item">
+                    <input type="text" placeholder="您的联系电话或电子邮箱">
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <script src="../frozen/lib/zeptojs/zepto.min.js"></script>
+    <script src="../frozen/js/frozen.js"></script>
+    <script>
+        function getVerificationCode (obj, count) {
+            setTimeout(function(){
+                if (count <= 0) {
+                    $(obj).removeClass('disabled');
+                    obj.innerText = '重新获取';
+                    return 0;
+                } else {
+                    $(obj).addClass('disabled');
+                    obj.innerText = count + ' 秒后可重发';
+                    return getVerificationCode(obj, count - 1);
+                }
+            },1000);
+        }
+    </script>
+</body>
+
+</html>

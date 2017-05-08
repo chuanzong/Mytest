@@ -1,0 +1,38 @@
+body {
+	padding-top: 15px;
+}
+
+.ui-form, .ui-list {
+	margin-bottom: 20px;
+}
+.ui-list li h4 {
+	font-size: 14px;
+	color: #504b48;
+}
+.ui-list .ui-avatar, .ui-list .ui-avatar-s, .ui-list .ui-avatar-lg {
+	margin: 12px 20px;
+}
+.ui-form-item label:not(.ui-switch):not(.ui-checkbox):not(.ui-radio) {
+	font-size: 14px;
+	width: 75px;
+	color: #504b48;
+}
+.ui-form-item input, .ui-form-item textarea, .ui-form-item p.txt {
+	font-size: 12px;
+	color: #a89e99;
+	padding-left: 75px;
+}
+.ui-form-item p.txt img {
+	height: 18px;
+	float: left;
+	margin-top: 12px;
+	margin-right: 8px;
+}
+
+
+
+
+
+
+
+

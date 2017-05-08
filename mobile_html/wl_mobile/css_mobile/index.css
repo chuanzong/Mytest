@@ -1,0 +1,46 @@
+body {
+	background: url(../images_mobile/bg-index.jpg) no-repeat center top;
+	background-size: cover;
+}
+
+.ui-slider {
+	margin: 95px auto 25px;
+	width: auto;
+	padding-top: 41.6667%;
+}
+.ui-slider-indicators {
+	-webkit-box-pack: center;
+	bottom: 6px;
+}
+.ui-slider-indicators li {
+	background-color: #8e8e8e;
+	margin: 0 4px;
+}
+.ui-slider-indicators li.current:before {
+	left: 0;
+	top: 0;
+	width: 7px;
+	height: 7px;
+
+}
+.ui-slider-content > li span {
+	background-size: cover;
+	background-position: center;
+}
+.links-index img {
+	vertical-align: bottom;
+}
+.links-index > li {
+	text-align: center;
+}
+
+.links-index > li:nth-child(1) img {
+	width: 71px;
+}
+.links-index > li:nth-child(2) img {
+	width: 72px;
+}
+.links-index > li:nth-child(3) img {
+	width: 71px;
+	margin-top: -7px;
+}
